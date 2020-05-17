@@ -10,6 +10,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
+using MediaBrowser.Plugins.Anime.Providers.AniDB.Enricher;
 
 namespace MediaBrowser.Plugins.Anime.Providers.AniDB.Metadata
 {
@@ -20,6 +21,7 @@ namespace MediaBrowser.Plugins.Anime.Providers.AniDB.Metadata
     {
         private readonly IServerConfigurationManager _configurationManager;
         private readonly IHttpClient _httpClient;
+        private readonly AbsoluteNumberEnricher _enricher;
 
         /// <summary>
         ///     Creates a new instance of the <see cref="AniDbEpisodeProvider" /> class.
@@ -30,6 +32,7 @@ namespace MediaBrowser.Plugins.Anime.Providers.AniDB.Metadata
         {
             _configurationManager = configurationManager;
             _httpClient = httpClient;
+            _enricher = new AbsoluteNumberEnricher(configurationManager.ApplicationPaths);
         }
 
         public async Task<MetadataResult<Episode>> GetMetadata(EpisodeInfo info, CancellationToken cancellationToken)
@@ -71,6 +74,8 @@ namespace MediaBrowser.Plugins.Anime.Providers.AniDB.Metadata
                     ParseAdditionalEpisodeXml(additionalXml, result.Item, info.MetadataLanguage);
                 }
             }
+
+            _enricher.EnrichWithEpisodeAbsoluteNumber(info, result.Item);
 
             return result;
         }

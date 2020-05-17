@@ -21,4 +21,12 @@
     <PackageReference Include="System.Memory" Version="4.5.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;$(TargetDir)&quot; &quot;%25AppData%25\Emby-Server\programdata\Plugins\&quot; /y" />
+  </Target>
+
 </Project>

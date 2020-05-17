@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Episode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" minOccurs="0" />
+        <xs:element name="Combined_episodenumber" type="xs:string" minOccurs="0" />
+        <xs:element name="Combined_season" type="xs:string" minOccurs="0" />
+        <xs:element name="DVD_chapter" type="xs:string" minOccurs="0" />
+        <xs:element name="DVD_discid" type="xs:string" minOccurs="0" />
+        <xs:element name="DVD_episodenumber" type="xs:string" minOccurs="0" />
+        <xs:element name="DVD_season" type="xs:string" minOccurs="0" />
+        <xs:element name="Director" type="xs:string" minOccurs="0" />
+        <xs:element name="EpImgFlag" type="xs:string" minOccurs="0" />
+        <xs:element name="EpisodeName" type="xs:string" minOccurs="0" />
+        <xs:element name="EpisodeNumber" type="xs:string" minOccurs="0" />
+        <xs:element name="FirstAired" type="xs:string" minOccurs="0" />
+        <xs:element name="GuestStars" type="xs:string" minOccurs="0" />
+        <xs:element name="IMDB_ID" type="xs:string" minOccurs="0" />
+        <xs:element name="Language" type="xs:string" minOccurs="0" />
+        <xs:element name="Overview" type="xs:string" minOccurs="0" />
+        <xs:element name="ProductionCode" type="xs:string" minOccurs="0" />
+        <xs:element name="Rating" type="xs:string" minOccurs="0" />
+        <xs:element name="RatingCount" type="xs:string" minOccurs="0" />
+        <xs:element name="SeasonNumber" type="xs:string" minOccurs="0" />
+        <xs:element name="Writer" type="xs:string" minOccurs="0" />
+        <xs:element name="absolute_number" type="xs:string" minOccurs="0" />
+        <xs:element name="airsafter_season" type="xs:string" minOccurs="0" />
+        <xs:element name="airsbefore_episode" type="xs:string" minOccurs="0" />
+        <xs:element name="airsbefore_season" type="xs:string" minOccurs="0" />
+        <xs:element name="filename" type="xs:string" minOccurs="0" />
+        <xs:element name="lastupdated" type="xs:string" minOccurs="0" />
+        <xs:element name="seasonid" type="xs:string" minOccurs="0" />
+        <xs:element name="seriesid" type="xs:string" minOccurs="0" />
+        <xs:element name="thumb_added" type="xs:string" minOccurs="0" />
+        <xs:element name="thumb_height" type="xs:string" minOccurs="0" />
+        <xs:element name="thumb_width" type="xs:string" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Episode" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
